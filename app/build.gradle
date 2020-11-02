@@ -33,6 +33,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
 
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
     implementation "org.koin:koin-core:$koin_version"
     implementation "org.koin:koin-android-ext:$koin_version"
     implementation "org.koin:koin-androidx-ext:$koin_version"
