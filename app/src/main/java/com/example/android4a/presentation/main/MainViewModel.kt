@@ -20,7 +20,7 @@ class MainViewModel(
     }
     fun onClickedIncrement(emailUser: String) {
         viewModelScope.launch {
-            createUserUseCase.invoke(User(emailUser))
+            createUserUseCase.invoke(User("test"))
         }
 
         // counter.value = (counter.value ?:0) + 1
