@@ -1,9 +1,21 @@
 package com.example.android4a.data.repository
 
+import com.example.android4a.data.local.DataBaseDao
+import com.example.android4a.data.local.models.UserLocal
+import com.example.android4a.data.local.models.toData
+import com.example.android4a.data.local.models.toEntity
 import com.example.android4a.domain.entity.User
 
-class UserRepository {
-    suspend fun creteUser(user : User){
+class UserRepository (
+    private val databaseDao: DataBaseDao
+){
 
+    suspend fun creteUser(user : User){
+        databaseDao.insert(user.toData())
+    }
+
+    fun getUser(email: String) : User {
+        val userLocal : UserLocal = databaseDao.findByName(email)
+        return userLocal.toEntity()
     }
 }
