@@ -10,7 +10,7 @@ class UserRepository (
     private val databaseDao: DataBaseDao
 ){
 
-    suspend fun creteUser(user : User){
+    suspend fun createUser(user : User){
         databaseDao.insert(user.toData())
     }
 
