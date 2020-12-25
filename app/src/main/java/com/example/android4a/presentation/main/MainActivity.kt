@@ -28,7 +28,9 @@ class MainActivity : AppCompatActivity() {
                             dialog.dismiss()
                         }
                         .show()
-                    //TODO
+                    val monIntent : Intent =  Intent(this, MainActivity3::class.java)
+                    startActivity(monIntent)
+
                 }
                 LoginError -> {
                     MaterialAlertDialogBuilder(this)

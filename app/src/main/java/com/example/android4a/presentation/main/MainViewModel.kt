@@ -33,7 +33,7 @@ class MainViewModel(
     }
     fun onClickedLoginAccount(user: User){
         viewModelScope.launch(Dispatchers.IO) {
-            val user : Unit = createUserUseCase.invoke(user)
+            createUserUseCase.invoke(user)
         }
     }
 

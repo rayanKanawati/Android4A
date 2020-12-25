@@ -20,8 +20,8 @@ class MainActivity2 : AppCompatActivity() {
 
 
         Create_account.setOnClickListener(){
-            val monIntentRetour : Intent =  Intent(this,MainActivity::class.java)
-            val user = User((loginAccount_edit.text.toString()))
+            val monIntentRetour =  Intent(this,MainActivity::class.java)
+            val user = User((loginAccount_edit.text.toString().trim()))
             mainViewModel.onClickedLoginAccount(user)
             startActivity(monIntentRetour)
         }
