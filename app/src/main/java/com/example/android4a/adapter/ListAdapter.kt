@@ -9,11 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android4a.R
 import com.example.android4a.adapter.ListAdapter.ViewHolder
+import com.example.android4a.model.Pokemon
 
 
-class ListAdapter(val items: MutableList<String>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class ListAdapter(val items: MutableList<Pokemon>?, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
 
-    var values: MutableList<String>? = items
+    var values: MutableList<Pokemon>? = items
 
     class ViewHolder(var layout: View) : RecyclerView.ViewHolder(layout) {
         // each data item is just a string in this case
@@ -26,7 +27,7 @@ class ListAdapter(val items: MutableList<String>, val context: Context) : Recycl
         }
     }
 
-    fun add(position: Int, item: String?) {
+    fun add(position: Int, item: Pokemon?) {
         values?.add(position, item!!)
         notifyItemInserted(position)
     }
@@ -37,8 +38,8 @@ class ListAdapter(val items: MutableList<String>, val context: Context) : Recycl
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    fun ListAdapter(myDataset: MutableList<String>?) {
-        values = myDataset
+    fun ListAdapter(myDataset: MutableList<Pokemon>?) {
+        values = myDataset!!
     }
 
     // Create new views (invoked by the layout manager)
@@ -59,9 +60,9 @@ class ListAdapter(val items: MutableList<String>, val context: Context) : Recycl
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        val name: String = values!!.get(position)
-        holder.txtHeader.text = name
-        holder.txtFooter.text = name
+        val name: Pokemon = values!!.get(position)
+        holder.txtHeader.text = name.getName()
+        holder.txtFooter.text = name.getName()
     }
 
     // Return the size of your dataset (invoked by the layout manager)

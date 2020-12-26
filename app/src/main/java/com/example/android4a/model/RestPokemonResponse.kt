@@ -1,9 +1,9 @@
 package com.example.android4a.model
 
-class RestPokemonResponse {
+class RestPokemonResponse{
     private val count: Int? = null
     private val next: String? = null
-    private val results: List<Pokemon?>? = null
+    private val results: MutableList<Pokemon>? = null
 
     fun getCount(): Int? {
         return count
@@ -13,7 +13,7 @@ class RestPokemonResponse {
         return next
     }
 
-    fun getResults(): List<Pokemon?>? {
+    fun getResults(): MutableList<Pokemon>? {
         return results
     }
 }

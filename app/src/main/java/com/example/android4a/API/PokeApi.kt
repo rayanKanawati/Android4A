@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface PokeApi {
 
-    @GET("pokemon")
+    @GET("/api/v2/pokemon?limit=807")
     fun getPokemonResponse (): Call<RestPokemonResponse>
 
 
