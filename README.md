@@ -4,6 +4,7 @@
 
 Projet android ayant pour but de créer une interface de connexion avec possibilité de créer un compte.
 Une fois l'utilisateur connecté, il pourra accéder à la liste des pokémon
+réalisé par Rayan KANAWATI étudiant à l'ESIEA
 
 ## Prérequis
 
