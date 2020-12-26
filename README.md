@@ -23,8 +23,10 @@ https://github.com/rayanKanawati/Android4A
  
 ## Image de l'application
 
-<img src="https://user-images.githubusercontent.com/62397552/82733560-e1b71400-9d14-11ea-99e8-fa18fe3c5168.jpg" width="360" height="640" />
+<img src="https://user-images.githubusercontent.com/62397552/103151626-0c23f080-4780-11eb-89f4-de306febe956.jpg" width="360" height="640" />
 
-## Détail du Pokémon
+<img src="https://user-images.githubusercontent.com/62397552/103151631-0f1ee100-4780-11eb-965c-83c70baf8712.jpg" width="360" height="640" />
 
-<img src="https://user-images.githubusercontent.com/62397552/82760753-0931dd80-9df6-11ea-8bec-17fdd287ec29.jpg" width="360" height="640" />
+<img src="https://user-images.githubusercontent.com/62397552/103151632-10500e00-4780-11eb-9e05-6839999522d7.jpg" width="360" height="640" />
+
+
