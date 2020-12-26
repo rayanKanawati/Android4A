@@ -3,6 +3,8 @@ package com.example.android4a.presentation.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import android.widget.Toast.LENGTH_SHORT
 import com.example.android4a.R
 import com.example.android4a.domain.entity.User
 import kotlinx.android.synthetic.main.activity_main2.*
@@ -21,9 +23,13 @@ class MainActivity2 : AppCompatActivity() {
 
         Create_account.setOnClickListener(){
             val monIntentRetour =  Intent(this,MainActivity::class.java)
-            val user = User((loginAccount_edit.text.toString().trim()))
-            mainViewModel.onClickedLoginAccount(user)
-            startActivity(monIntentRetour)
+            val user = User((loginAccount_edit.text.toString().trim()),passwordAccount_edit.text.toString())
+            if(user.email !="" && user.password != "") {
+                mainViewModel.onClickedLoginAccount(user)
+                startActivity(monIntentRetour)
+            }else{
+                Toast.makeText(applicationContext,"add a password or a user",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
