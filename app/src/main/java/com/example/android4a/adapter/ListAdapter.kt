@@ -8,28 +8,65 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android4a.R
-import kotlinx.android.synthetic.main.list_items.view.*
+import com.example.android4a.adapter.ListAdapter.ViewHolder
 
 
 class ListAdapter(val items: MutableList<String>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
 
-    // Gets the number of animals in the list
-    override fun getItemCount(): Int {
-        return items.size
+    var values: MutableList<String>? = items
+
+    class ViewHolder(var layout: View) : RecyclerView.ViewHolder(layout) {
+        // each data item is just a string in this case
+        var txtHeader: TextView
+        var txtFooter: TextView
+
+        init {
+            txtHeader = layout.findViewById<View>(R.id.firstLine) as TextView
+            txtFooter = layout.findViewById<View>(R.id.secondLine) as TextView
+        }
     }
 
-    // Inflates the item views
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_items, parent, false))
+    fun add(position: Int, item: String?) {
+        values?.add(position, item!!)
+        notifyItemInserted(position)
     }
 
-    // Binds each animal in the ArrayList to a view
+    fun remove(position: Int) {
+        values?.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+    // Provide a suitable constructor (depends on the kind of dataset)
+    fun ListAdapter(myDataset: MutableList<String>?) {
+        values = myDataset
+    }
+
+    // Create new views (invoked by the layout manager)
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder {
+        // create a new view
+        val inflater = LayoutInflater.from(
+            parent.context
+        )
+        val v: View = inflater.inflate(R.layout.row_layout, parent, false)
+        // set the view's size, margins, paddings and layout parameters
+        return ViewHolder(v)
+    }
+
+    // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvAnimalType.text = items.get(position)
+        // - get element from your dataset at this position
+        // - replace the contents of the view with that element
+        val name: String = values!!.get(position)
+        holder.txtHeader.text = name
+        holder.txtFooter.text = name
+    }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    override fun getItemCount(): Int {
+        return values!!.size
     }
 }
 
-class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-    // Holds the TextView that will add each animal to
-    val tvAnimalType: TextView = view.list_items
-}
