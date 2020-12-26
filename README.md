@@ -16,7 +16,7 @@ https://github.com/rayanKanawati/Android4A
 
  * Affichage d'une liste de Pokémon via une recyclerView
  * Réalisation d'un appel serveur
- * Architecture MVVm
+ * Architecture MVVM
  * Possibilité de création de compte stocké dans une base de données
  * Possibilité de connexion avec ce compte
 
