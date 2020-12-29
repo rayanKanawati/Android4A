@@ -5,11 +5,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android4a.API.PokeApi
+import com.example.android4a.data.API.PokeApi
 import com.example.android4a.R
-import com.example.android4a.adapter.ListAdapter
-import com.example.android4a.model.Pokemon
-import com.example.android4a.model.RestPokemonResponse
+import com.example.android4a.data.adapter.ListAdapter
+import com.example.android4a.domain.model.Pokemon
+import com.example.android4a.domain.model.RestPokemonResponse
 import kotlinx.android.synthetic.main.activity_main3.*
 import retrofit2.Call
 import retrofit2.Callback
