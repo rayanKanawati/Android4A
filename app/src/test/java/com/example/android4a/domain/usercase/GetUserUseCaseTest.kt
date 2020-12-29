@@ -21,12 +21,14 @@ class GetUserUseCaseTest{
     fun `invoke with invalid email`(){
         runBlocking {
             val email =  "a@a.c"
-            val expectedUser = User("a@a.c")
-            coEvery { userRepository.getUser(email) } returns expectedUser
+            val expectedUser = User("a@a.c","a")
+            val password =  "a"
 
-            val result = classUnderTest.invoke(email)
+            coEvery { userRepository.getUser(email,password) } returns expectedUser
 
-            coVerify ( exactly = 1){ userRepository.getUser(email)}
+            val result = classUnderTest.invoke(email,password)
+
+            coVerify ( exactly = 1){ userRepository.getUser(email,password)}
             assertEquals(result, expectedUser)
 
         }

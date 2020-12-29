@@ -16,7 +16,7 @@ class CreateUserUseCaseTest{
     @Test
     fun invoke(){
         runBlocking {
-            val user =  User("")
+            val user =  User("a@a.c","a")
             coEvery { userRepository.createUser(user) } returns Unit
 
             classUnderTest.invoke(user)
