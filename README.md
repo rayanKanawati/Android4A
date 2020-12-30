@@ -21,7 +21,7 @@ https://github.com/rayanKanawati/Android4A
  * Architecture MVVM
  * Possibilité de création de compte stocké dans une base de données
  * Possibilité de connexion avec ce compte
-
+ * Clean architecture
  
 ## Image de l'application
 
